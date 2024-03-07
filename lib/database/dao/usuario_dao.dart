@@ -2,7 +2,6 @@ import 'dart:developer';
 
 import 'package:caracas_ya_app/database/db.dart';
 import 'package:caracas_ya_app/database/models/models.dart';
-import 'package:flutter/material.dart';
 import 'package:isar/isar.dart';
 
 class UsuarioDao {
