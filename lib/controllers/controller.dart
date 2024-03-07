@@ -1,2 +1,2 @@
-// lib\controllers\controller.dart
-export './isar_controller.dart';
+export './auth_controller.dart';
+export './http_controller.dart';

@@ -20,8 +20,13 @@ class IsarHelper {
     }
 
     final path = (await getApplicationDocumentsDirectory()).path;
-    _isarDb = await Isar.open([
-      TasaValorSchema,
-    ], directory: path);
+    _isarDb = await Isar.open(
+      [
+        TasaValorSchema,
+        UsuarioSchema,
+      ],
+      directory: path,
+      name: 'caracasYa.db',
+    );
   }
 }

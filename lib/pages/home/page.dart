@@ -1,5 +1,6 @@
 import 'dart:ui';
 
+import 'package:caracas_ya_app/controllers/controller.dart';
 import 'package:caracas_ya_app/pages/home/home_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -13,6 +14,17 @@ class HomePage extends StatelessWidget {
         init: HomeController(),
         builder: (_) {
           return Scaffold(
+            appBar: AppBar(
+              title: const Text('Home Page'),
+              actions: [
+                IconButton(
+                  onPressed: () async {
+                    await AuthController().logout();
+                  },
+                  icon: const Icon(Icons.logout),
+                )
+              ],
+            ),
             body: Container(
               width: double.infinity,
               height: double.infinity,
