@@ -2,6 +2,7 @@ import 'package:app_settings/app_settings.dart';
 import 'package:get/get.dart';
 import 'package:intl/intl.dart';
 import 'package:local_auth/local_auth.dart';
+import 'package:permission_handler/permission_handler.dart';
 
 class Helper {
   // A function that takes a double value and returns a formatted currency string with the currency symbol "₡".
@@ -58,5 +59,19 @@ class Helper {
     }
 
     return isAuthorized;
+  }
+
+  Future<bool> checkStatusNotificationPermission() async {
+    var status = await Permission.notification.status;
+    return status.isGranted;
+  }
+
+  Future<void> requestNotificationPermission() async {
+    await Permission.notification.request();
+  }
+
+  Future<void> openNotificationSettings() async {
+    return await AppSettings.openAppSettings(
+        type: AppSettingsType.notification);
   }
 }

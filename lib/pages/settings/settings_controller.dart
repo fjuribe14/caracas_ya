@@ -21,8 +21,14 @@ class SettingsController extends GetxController {
   Future<void> init() async {
     biometricActivated.value = await storage.read(key: 'biometric') == 'true';
     darkModeActivated.value = await storage.read(key: 'theme') == 'true';
-    notificationsActivated.value =
-        await storage.read(key: 'notifications') == 'true';
+
+    final statusNotificationPermission =
+        await Helper().checkStatusNotificationPermission();
+
+    notificationsActivated.value = statusNotificationPermission;
+
+    await storage.write(
+        key: 'notifications', value: notificationsActivated.value.toString());
 
     debugPrint({'notificationsActivated': notificationsActivated}.toString());
     debugPrint({'biometricActivated': biometricActivated}.toString());
@@ -40,8 +46,16 @@ class SettingsController extends GetxController {
     }
   }
 
-  Future<void> toggleNotifications() async {
-    notificationsActivated.value = !notificationsActivated.value;
+  Future<void> toggleNotifications(bool value) async {
+    if (value) {
+      await Helper().requestNotificationPermission();
+    } else {
+      await Helper().openNotificationSettings();
+    }
+
+    notificationsActivated.value =
+        await Helper().checkStatusNotificationPermission();
+
     await storage.write(
         key: 'notifications', value: notificationsActivated.value.toString());
   }

@@ -67,7 +67,7 @@ class SettingsPage extends StatelessWidget {
                     tiles: <SettingsTile>[
                       SettingsTile.switchTile(
                         onToggle: (value) async {
-                          await controller.toggleNotifications();
+                          await controller.toggleNotifications(value);
                         },
                         initialValue: controller.notificationsActivated.value,
                         leading: const Icon(Icons.notifications_on_outlined),
