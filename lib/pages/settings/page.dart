@@ -1,4 +1,5 @@
 import 'package:caracas_ya_app/pages/settings/settings_controller.dart';
+import 'package:caracas_ya_app/routes/routes.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:settings_ui/settings_ui.dart';
@@ -9,6 +10,7 @@ class SettingsPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Get.theme.colorScheme.onSurface,
       appBar: AppBar(
         title: const Text('Settings'),
       ),
@@ -46,7 +48,7 @@ class SettingsPage extends StatelessWidget {
                         leading: const Icon(Icons.lock_open_rounded),
                         title: const Text('Cambiar contraseña'),
                         onPressed: (context) {
-                          // Get.toNamed(Routes.security);
+                          Get.toNamed(Routes.resetPassword);
                         },
                       ),
                       SettingsTile.switchTile(
