@@ -1,8 +1,9 @@
 import 'package:app_settings/app_settings.dart';
+import 'package:firebase_messaging/firebase_messaging.dart';
+import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:intl/intl.dart';
 import 'package:local_auth/local_auth.dart';
-import 'package:permission_handler/permission_handler.dart';
 
 class Helper {
   // A function that takes a double value and returns a formatted currency string with the currency symbol "₡".
@@ -62,16 +63,53 @@ class Helper {
   }
 
   Future<bool> checkStatusNotificationPermission() async {
-    var status = await Permission.notification.status;
-    return status.isGranted;
+    final status = await requestNotificationPermission();
+    return status.authorizationStatus == AuthorizationStatus.authorized;
   }
 
-  Future<void> requestNotificationPermission() async {
-    await Permission.notification.request();
+  Future<NotificationSettings> requestNotificationPermission() async {
+    FirebaseMessaging messaging = FirebaseMessaging.instance;
+
+    final status = await messaging.requestPermission(
+      alert: true,
+      announcement: false,
+      badge: true,
+      carPlay: false,
+      criticalAlert: false,
+      provisional: false,
+      sound: true,
+    );
+
+    if (status.authorizationStatus == AuthorizationStatus.authorized) {
+      String? token = await messaging.getToken();
+      debugPrint({'messaging token': token}.toString());
+
+      FirebaseMessaging.onMessage.listen((RemoteMessage message) {
+        message.toMap().forEach((key, value) {
+          print("$key: $value");
+        });
+        // Handle the message and display the notification in the UI
+      });
+
+      FirebaseMessaging.onMessageOpenedApp.listen((RemoteMessage message) {
+        print("onMessageOpenedApp: $message");
+        // Handle the notification when the app is opened from the notification
+      });
+
+      FirebaseMessaging.onBackgroundMessage(
+          _firebaseMessagingBackgroundHandler);
+    }
+
+    return status;
   }
 
   Future<void> openNotificationSettings() async {
     return await AppSettings.openAppSettings(
         type: AppSettingsType.notification);
+  }
+
+  Future<void> _firebaseMessagingBackgroundHandler(
+      RemoteMessage message) async {
+    print("Handling a background message: ${message.messageId}");
   }
 }

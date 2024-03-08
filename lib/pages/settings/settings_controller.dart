@@ -1,4 +1,5 @@
 import 'package:caracas_ya_app/helpers/helper.dart';
+import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:get/get.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
@@ -55,6 +56,8 @@ class SettingsController extends GetxController {
 
     notificationsActivated.value =
         await Helper().checkStatusNotificationPermission();
+
+    FirebaseMessaging.instance.getToken().then((value) => print(value));
 
     await storage.write(
         key: 'notifications', value: notificationsActivated.value.toString());
