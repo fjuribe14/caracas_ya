@@ -1,0 +1,84 @@
+{
+  "project_info": {
+    "project_number": "119211992417",
+    "project_id": "sencillo-e2048",
+    "storage_bucket": "sencillo-e2048.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:119211992417:android:c564c5f7c87e5ac9c51120",
+        "android_client_info": {
+          "package_name": "com.bankingtechnologies.consulting.sencillo"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "119211992417-3egbhrdnqeihpa5orsrcf37thoinl17h.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBK8iQ5ZpnWb0iWCzkG39sFwZ1DAmczZ-c"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "119211992417-3egbhrdnqeihpa5orsrcf37thoinl17h.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "119211992417-mu4rqab8dfdd75182571l5rlg28889qs.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.bankingtechnologies.consulting.sencillo",
+                "app_store_id": "6469374885"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:119211992417:android:66996cb4a0fe9775c51120",
+        "android_client_info": {
+          "package_name": "com.example.caracas_ya_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "119211992417-3egbhrdnqeihpa5orsrcf37thoinl17h.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBK8iQ5ZpnWb0iWCzkG39sFwZ1DAmczZ-c"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "119211992417-3egbhrdnqeihpa5orsrcf37thoinl17h.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "119211992417-mu4rqab8dfdd75182571l5rlg28889qs.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.bankingtechnologies.consulting.sencillo",
+                "app_store_id": "6469374885"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

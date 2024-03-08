@@ -21,7 +21,7 @@ class HttpController {
     final token = await storage.read(key: 'token');
 
     if (token != null) {
-      debugPrint('Bearer $token');
+      // debugPrint('Bearer $token');
       _dio.options.headers['Authorization'] = 'Bearer $token';
     }
 

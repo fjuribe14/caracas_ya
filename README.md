@@ -64,5 +64,20 @@ ios\Runner\Info.plist
     # Install the CLI if not already done so
     dart pub global activate flutterfire_cli
 
+    firebase login
+
     # Run the `configure` command, select a Firebase project and platforms
     flutterfire configure
+
+### # Push Notification
+
+    flutter pub add firebase_messaging
+
+<strong>/android/app/build.gradle</strong>
+
+    android {
+        defaultConfig {
+            // ...
+            multiDexEnabled true
+        }
+    }

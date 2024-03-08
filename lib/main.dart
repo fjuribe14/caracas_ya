@@ -1,5 +1,7 @@
 import 'package:get/get.dart';
+import 'firebase_options.dart';
 import 'package:flutter/material.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:flutter_native_splash/flutter_native_splash.dart';
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
@@ -23,6 +25,10 @@ void main() async {
     Get.changeTheme(await storage.read(key: 'theme') == 'true'
         ? ThemeConfig.darkTheme
         : ThemeConfig.lightTheme);
+
+    await Firebase.initializeApp(
+      options: DefaultFirebaseOptions.currentPlatform,
+    );
   } catch (e) {
     debugPrint(e.toString());
   } finally {
