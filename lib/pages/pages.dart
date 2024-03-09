@@ -5,3 +5,4 @@ export 'settings/page.dart';
 export 'auth/login/page.dart';
 export 'auth/reset_password/page.dart';
 export 'auth/reset_activation_code/page.dart';
+export 'auth/profile/page.dart';

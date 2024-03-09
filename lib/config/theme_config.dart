@@ -71,10 +71,44 @@ class ThemeConfig {
   );
 
   static ThemeData lightTheme = ThemeData.light(useMaterial3: true).copyWith(
-      colorScheme: ThemeConfig.lightColorScheme,
-      textTheme: GoogleFonts.interTextTheme());
+    colorScheme: ThemeConfig.lightColorScheme,
+    textTheme: GoogleFonts.interTextTheme().copyWith(
+      bodyLarge: TextStyle(color: lightColorScheme.onBackground),
+      bodyMedium: TextStyle(color: lightColorScheme.onBackground),
+      bodySmall: TextStyle(color: lightColorScheme.onBackground),
+      displayLarge: TextStyle(color: lightColorScheme.onBackground),
+      displayMedium: TextStyle(color: lightColorScheme.onBackground),
+      displaySmall: TextStyle(color: lightColorScheme.onBackground),
+      headlineLarge: TextStyle(color: lightColorScheme.onBackground),
+      headlineMedium: TextStyle(color: lightColorScheme.onBackground),
+      headlineSmall: TextStyle(color: lightColorScheme.onBackground),
+      labelLarge: TextStyle(color: lightColorScheme.onBackground),
+      labelMedium: TextStyle(color: lightColorScheme.onBackground),
+      labelSmall: TextStyle(color: lightColorScheme.onBackground),
+      titleLarge: TextStyle(color: lightColorScheme.onBackground),
+      titleMedium: TextStyle(color: lightColorScheme.onBackground),
+      titleSmall: TextStyle(color: lightColorScheme.onBackground),
+    ),
+  );
 
   static ThemeData darkTheme = ThemeData.dark(useMaterial3: true).copyWith(
-      colorScheme: ThemeConfig.darkColorScheme,
-      textTheme: GoogleFonts.interTextTheme());
+    colorScheme: ThemeConfig.darkColorScheme,
+    textTheme: GoogleFonts.interTextTheme().copyWith(
+      bodyLarge: TextStyle(color: darkColorScheme.onBackground),
+      bodyMedium: TextStyle(color: darkColorScheme.onBackground),
+      bodySmall: TextStyle(color: darkColorScheme.onBackground),
+      displayLarge: TextStyle(color: darkColorScheme.onBackground),
+      displayMedium: TextStyle(color: darkColorScheme.onBackground),
+      displaySmall: TextStyle(color: darkColorScheme.onBackground),
+      headlineLarge: TextStyle(color: darkColorScheme.onBackground),
+      headlineMedium: TextStyle(color: darkColorScheme.onBackground),
+      headlineSmall: TextStyle(color: darkColorScheme.onBackground),
+      labelLarge: TextStyle(color: darkColorScheme.onBackground),
+      labelMedium: TextStyle(color: darkColorScheme.onBackground),
+      labelSmall: TextStyle(color: darkColorScheme.onBackground),
+      titleLarge: TextStyle(color: darkColorScheme.onBackground),
+      titleMedium: TextStyle(color: darkColorScheme.onBackground),
+      titleSmall: TextStyle(color: darkColorScheme.onBackground),
+    ),
+  );
 }

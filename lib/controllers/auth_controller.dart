@@ -19,8 +19,8 @@ class AuthController extends GetxController {
 
   @override
   void onInit() async {
-    super.onInit();
     await init();
+    super.onInit();
   }
 
   // Asynchronous function that initializes the user, retrieves user data from the database using UsuarioDao, and performs a login if the user data is not null. Catches and prints any errors that occur during the process.
