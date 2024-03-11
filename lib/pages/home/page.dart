@@ -2,6 +2,7 @@ import 'dart:ui';
 
 import 'package:caracas_ya_app/controllers/controller.dart';
 import 'package:caracas_ya_app/pages/home/home_controller.dart';
+import 'package:caracas_ya_app/routes/routes.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -18,11 +19,8 @@ class HomePage extends StatelessWidget {
               title: const Text('Home Page'),
               actions: [
                 IconButton(
-                  onPressed: () async {
-                    await AuthController().logout();
-                  },
-                  icon: const Icon(Icons.logout),
-                )
+                    onPressed: () => Get.toNamed(Routes.settings),
+                    icon: const Icon(Icons.settings_rounded))
               ],
             ),
             body: Container(

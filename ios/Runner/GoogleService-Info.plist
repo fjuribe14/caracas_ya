@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>119211992417-m1s8vlj9v3pcf2hntgp7p08j9era6uuh.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.119211992417-m1s8vlj9v3pcf2hntgp7p08j9era6uuh</string>
+	<key>API_KEY</key>
+	<string>AIzaSyCENBwZBIB1_Urhsj4ELipQethTAz6v0-w</string>
+	<key>GCM_SENDER_ID</key>
+	<string>119211992417</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.example.caracasYaApp</string>
+	<key>PROJECT_ID</key>
+	<string>sencillo-e2048</string>
+	<key>STORAGE_BUCKET</key>
+	<string>sencillo-e2048.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:119211992417:ios:beb37d7e2abbf74dc51120</string>
+</dict>
+</plist>
