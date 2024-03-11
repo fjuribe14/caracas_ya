@@ -12,6 +12,7 @@ import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import 'package:get/get.dart';
 
 class AuthController extends GetxController {
+  var showPassword = false.obs;
   var usuario = <String, dynamic>{}.obs;
 
   var username = TextEditingController();
