@@ -31,6 +31,8 @@ class SettingsController extends GetxController {
     await storage.write(
         key: 'notifications', value: notificationsActivated.value.toString());
 
+    debugPrint({'statusNotificationPermission': statusNotificationPermission}
+        .toString());
     debugPrint({'notificationsActivated': notificationsActivated}.toString());
     debugPrint({'biometricActivated': biometricActivated}.toString());
     debugPrint({'darkModeActivated': darkModeActivated}.toString());
@@ -48,19 +50,23 @@ class SettingsController extends GetxController {
   }
 
   Future<void> toggleNotifications(bool value) async {
-    if (value) {
-      await Helper().requestNotificationPermission();
-    } else {
-      await Helper().openNotificationSettings();
+    try {
+      if (value) {
+        await Helper().requestNotificationPermission();
+      } else {
+        await Helper().openNotificationSettings();
+      }
+
+      notificationsActivated.value =
+          await Helper().checkStatusNotificationPermission();
+
+      FirebaseMessaging.instance.getToken().then((value) => print(value));
+
+      await storage.write(
+          key: 'notifications', value: notificationsActivated.value.toString());
+    } catch (e) {
+      debugPrint(e.toString());
     }
-
-    notificationsActivated.value =
-        await Helper().checkStatusNotificationPermission();
-
-    FirebaseMessaging.instance.getToken().then((value) => print(value));
-
-    await storage.write(
-        key: 'notifications', value: notificationsActivated.value.toString());
   }
 
   Future<void> toggleTheme() async {

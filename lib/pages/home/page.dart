@@ -1,6 +1,5 @@
 import 'dart:ui';
 
-import 'package:caracas_ya_app/controllers/controller.dart';
 import 'package:caracas_ya_app/pages/home/home_controller.dart';
 import 'package:caracas_ya_app/routes/routes.dart';
 import 'package:flutter/material.dart';

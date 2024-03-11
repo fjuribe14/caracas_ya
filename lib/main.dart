@@ -41,7 +41,7 @@ void main() async {
       child: GetMaterialApp(
         title: dotenv.env['APP_NAME'] ?? 'CaracasYaApp',
         locale: const Locale('es', 'ES'),
-        defaultTransition: Transition.cupertinoDialog,
+        defaultTransition: Transition.native,
         getPages: Routes.pages,
         initialRoute: Routes.login,
         theme: ThemeConfig.lightTheme,
