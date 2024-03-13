@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+// https://m3.material.io/theme-builder#/custom
+
 class ThemeConfig {
   static ColorScheme lightColorScheme = const ColorScheme(
     brightness: Brightness.light,
